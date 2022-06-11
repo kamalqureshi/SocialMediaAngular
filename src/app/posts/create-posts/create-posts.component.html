@@ -1,0 +1,27 @@
+
+<!-- Using Angular forms. Stores all the
+  values but need to name the inputs -->
+
+<!-- ngForms gives access over the form
+    ngModel gives access to the data in the form -->
+
+<!-- MatError is for form validation -->
+
+<form (submit)="onSubmitNewPost(postsForm)" #postsForm="ngForm">
+  <mat-card>
+
+    <mat-form-field>
+      <input name="title" matInput type="text" ngModel required #title="ngModel">
+      <mat-error *ngIf="title.invalid">Please enter a post title</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea name="content" matInput rows="6" ngModel required #content="ngModel"></textarea>
+      <mat-error *ngIf="content.invalid">Please enter a post content</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button type="submit">Submit</button>
+
+  </mat-card>
+</form>
+

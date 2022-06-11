@@ -1,0 +1,11 @@
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let post of postDetails">
+
+    <mat-expansion-panel-header>
+      {{post.title}}
+    </mat-expansion-panel-header>
+
+    <span> {{post.content}} </span>
+
+  </mat-expansion-panel>
+</mat-accordion>
